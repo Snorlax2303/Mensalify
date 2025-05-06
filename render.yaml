@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: mensalify-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false # Esta variável será configurada manualmente no dashboard do Render
+      - key: GROQ_API_KEY
+        sync: false
+      - key: Z_API_INSTANCE_ID
+        sync: false
+      - key: Z_API_TOKEN
+        sync: false
+      - key: Z_API_SECURITY_TOKEN
+        sync: false
